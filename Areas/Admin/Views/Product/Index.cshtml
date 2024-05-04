@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProductModel>
+@{
+    ViewData["Title"] = "Product Listed";
+}
+<h3>List Products</h3>
+<a asp-action="Create" asp-controller="Product">Add Product</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Author</th>
+            <th scope="col">Product Publicser</th>
+            <th scope="col">Product ReleaseDate</th>
+            <th scope="col">Product Description</th>
+            <th scope="col">Product Price</th>
+            <th scope="col">Product CategoryID</th>
+            <th scope="col">Product Image</th>
+        </tr>
+    </thead>
+    <tbody>
+  
+        {
+            <tr>
+                <th scope="row">Id</th>
+                <td>Name</td>
+                <td>Author</td>
+                <td>Publicser</td>
+                <td>ReleaseDate</td>
+                <td>Description</td>
+                <td>Price</td>
+                <td><img src="~/media/products/Image" atl="Name" width="100"></td>
+                <td>Image</td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-warning btn-sm" asp-controller="Product" asp-route-Id="Id">Edit</a>
+                    <a asp-action="Delete" class="btn btn-danger btn-sm confirmDeletion" asp-controller="Product" asp-route-Id="Id">Delete</a>
+                </td>
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>
